@@ -13,10 +13,11 @@ const counter = (state  = 0, action) =>{
 
 const { createStore } = Redux;
 const  store = createStore(counter);
-
-store.subscribe(() => {
+const render = () => {
   document.body.innerText = store.getState();
-});
+}
+render();
+store.subscribe(render);
 
 document.addEventListener('click', () => {
   store.dispatch({type: 'INCREMENT'})
