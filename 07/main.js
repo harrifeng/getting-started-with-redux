@@ -11,8 +11,6 @@ const counter = (state  = 0, action) =>{
   }
 }
 
-// const { createStore } = Redux;
-
 const createStore = (reducer) => {
   let state;
   let listeners = [];
@@ -24,7 +22,7 @@ const createStore = (reducer) => {
   const subscribe = (listener) => {
     listeners.push(listener);
     return () => {
-      listeners = listeners.filter( l => l !== listener)
+      listeners = listeners.filter( l => l !== listener) // hack way to unsubscribe
     };
   };
 
