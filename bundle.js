@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module '/Users/hfeng/github/getting-started-with-redux/main.js' from '/Users/hfeng/github/getting-started-with-redux'");
