@@ -1,14 +1,14 @@
-var Redux = require('redux');
-var ReactDOM = require('react-dom');
-var React = require('react');
+const Redux = require('redux');
+const ReactDOM = require('react-dom');
+const React = require('react');
 
-const counter = (state = 0, action) =>{
-  switch(action.type) {
-  case 'INCREMENT':
-    return state + 1;
-  case 'DECREMENT':
-    return state - 1;
-  default:
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
       return state;
   }
 };
@@ -19,7 +19,7 @@ const store = createStore(counter);
 const Counter = ({
   value,
   onIncrement,
-  onDecrement
+  onDecrement,
 }) => (
   <div>
     <h1>{value}</h1>
@@ -31,15 +31,14 @@ const render = () => {
   ReactDOM.render(
     <Counter
       value={store.getState()}
-      onIncrement={()=>
-                   store.dispatch({type: 'INCREMENT'})
+      onIncrement={() =>
+                   store.dispatch({ type: 'INCREMENT' })
                    }
-      onDecrement={()=>
-                   store.dispatch({type: 'DECREMENT'})
+      onDecrement={() =>
+                   store.dispatch({ type: 'DECREMENT' })
                    }
-      >
-    </Counter>,
-    document.getElementById('root')
+    />,
+    document.getElementById('root'),
   );
 };
 // add render as one of listeners

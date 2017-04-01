@@ -1,12 +1,12 @@
-var Redux = require('redux');
+const Redux = require('redux');
 
-const counter = (state = 0, action) =>{
-  switch(action.type) {
-  case 'INCREMENT':
-    return state + 1;
-  case 'DECREMENT':
-    return state - 1;
-  default:
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
       return state;
   }
 };
@@ -22,13 +22,13 @@ const createStore = (reducer) => {
   const subscribe = (listener) => {
     listeners.push(listener);
     return () => {
-      listeners = listeners.filter( l => l !== listener); // hack way to unsubscribe
+      listeners = listeners.filter(l => l !== listener); // hack way to unsubscribe
     };
   };
 
   dispatch({});
 
-  return { getState, dispatch, subscribe};
+  return { getState, dispatch, subscribe };
 };
 
 const store = createStore(counter);
@@ -39,5 +39,5 @@ render();
 store.subscribe(render);
 
 document.addEventListener('click', () => {
-  store.dispatch({type: 'INCREMENT'});
+  store.dispatch({ type: 'INCREMENT' });
 });
