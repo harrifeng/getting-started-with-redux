@@ -42,5 +42,7 @@ const render = () => {
     document.getElementById('root')
   );
 }
+// add render as one of listeners
+// all the listeners will be called in dispatch()
 store.subscribe(render);
 render();
