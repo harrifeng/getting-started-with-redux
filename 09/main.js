@@ -6,13 +6,13 @@ const addCounter = list => [...list, 0];
 
 const removeCounter = (list, index) => [
   ...list.slice(0, index),
-  ...list.slice(index + 1),
+  ...list.slice(index + 1)
 ];
 
 const incrementCounter = (list, index) => [
   ...list.slice(0, index),
   list[index] + 1,
-  ...list.slice(index + 1),
+  ...list.slice(index + 1)
 ];
 
 const testAddCounter = () => {
@@ -21,7 +21,7 @@ const testAddCounter = () => {
 
   deepFreeze(listBefore);
   expect(
-    addCounter(listBefore),
+    addCounter(listBefore)
   ).toEqual(listAfter);
 };
 
@@ -31,7 +31,7 @@ const testRemoveCounter = () => {
 
   deepFreeze(listBefore);
   expect(
-    removeCounter(listBefore, 1),
+    removeCounter(listBefore, 1)
   ).toEqual(listAfter);
 };
 
