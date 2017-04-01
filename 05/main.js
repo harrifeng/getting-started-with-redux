@@ -12,9 +12,9 @@ const counter = (state = 0, action) => {
 };
 
 expect(
-  counter(1, { type: 'INCREMENT' }),
+  counter(1, { type: 'INCREMENT' })
 ).toEqual(2);
 
 expect(
-  counter(1, { type: 'DECREMENT' }),
+  counter(1, { type: 'DECREMENT' })
 ).toEqual(0);
