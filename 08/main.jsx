@@ -1,5 +1,6 @@
 var Redux = require('redux')
 var ReactDOM = require('react-dom')
+var React = require('react')
 
 const counter = (state = 0, action) => {
   switch (action.type) {
