@@ -1,7 +1,7 @@
 var expect = require('expect');
 var deepFreeze = require('deep-freeze');
 const addCounter = (list) => {
-  return list.concat(0);
+  return [...list, 0];          // es6 style
 }
 
 const testAddCounter = () => {
