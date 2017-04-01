@@ -12,7 +12,7 @@ const counter = (state = 0, action) =>{
 };
 
 const createStore = (reducer) => {
-  let state;
+  let state = null;
   let listeners = [];
   const getState = () => state;
   const dispatch = (action) => {
