@@ -41,7 +41,7 @@ const testIncrementCounter = () => {
 
   deepFreeze(listBefore);
   expect(
-    incrementCounter(listBefore, 1),
+    incrementCounter(listBefore, 1)
   ).toEqual(listAfter);
 };
 
