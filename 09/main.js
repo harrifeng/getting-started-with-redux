@@ -2,14 +2,14 @@ var expect = require('expect');
 var deepFreeze = require('deep-freeze');
 const addCounter = (list) => {
   return [...list, 0];          // es6 style
-}
+};
 
 const removeCounter = (list, index) => {
   return [
     ...list.slice(0, index),
     ...list.slice(index+1)
   ];
-}
+};
 
 const incrementCounter = (list, index) => {
   return [
@@ -17,7 +17,7 @@ const incrementCounter = (list, index) => {
     list[index] + 1,
     ...list.slice(index+1)
   ];
-}
+};
 
 const testAddCounter = () => {
   const listBefore = [];

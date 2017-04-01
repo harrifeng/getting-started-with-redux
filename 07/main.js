@@ -1,6 +1,6 @@
 var Redux = require('redux');
 
-const counter = (state  = 0, action) =>{
+const counter = (state = 0, action) =>{
   switch(action.type) {
   case 'INCREMENT':
     return state + 1;
@@ -9,10 +9,10 @@ const counter = (state  = 0, action) =>{
   default:
       return state;
   }
-}
+};
 
 const createStore = (reducer) => {
-  let state;
+  let state = null;
   let listeners = [];
   const getState = () => state;
   const dispatch = (action) => {
@@ -22,22 +22,22 @@ const createStore = (reducer) => {
   const subscribe = (listener) => {
     listeners.push(listener);
     return () => {
-      listeners = listeners.filter( l => l !== listener) // hack way to unsubscribe
+      listeners = listeners.filter( l => l !== listener); // hack way to unsubscribe
     };
   };
 
   dispatch({});
 
   return { getState, dispatch, subscribe};
-}
+};
 
 const store = createStore(counter);
 const render = () => {
   document.body.innerText = store.getState();
-}
+};
 render();
 store.subscribe(render);
 
 document.addEventListener('click', () => {
-  store.dispatch({type: 'INCREMENT'})
+  store.dispatch({type: 'INCREMENT'});
 });
