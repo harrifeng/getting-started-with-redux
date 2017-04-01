@@ -2,7 +2,7 @@ var Redux = require('redux');
 var ReactDOM = require('react-dom');
 var React = require('react');
 
-const counter = (state  = 0, action) =>{
+const counter = (state = 0, action) =>{
   switch(action.type) {
   case 'INCREMENT':
     return state + 1;
@@ -11,10 +11,10 @@ const counter = (state  = 0, action) =>{
   default:
       return state;
   }
-}
+};
 
 const { createStore } = Redux;
-const  store = createStore(counter);
+const store = createStore(counter);
 
 const Counter = ({
   value,
@@ -41,7 +41,7 @@ const render = () => {
     </Counter>,
     document.getElementById('root')
   );
-}
+};
 // add render as one of listeners
 // all the listeners will be called in dispatch()
 store.subscribe(render);
