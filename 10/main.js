@@ -2,9 +2,12 @@ const expect = require('expect');
 
 const deepFreeze = require('deep-freeze');
 
-const toggleTodo = todo => Object.assign({}, todo, {
-  completed: !todo.completed
-});
+const toggleTodo = todo => {
+  return {
+    ...todo,
+    completed: !todo.completed
+  };
+};
 
 const testToggleTodo = () => {
   const todoBefore = {
