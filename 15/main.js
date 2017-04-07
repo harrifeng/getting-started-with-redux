@@ -45,8 +45,8 @@ const visibilityFilter = (
 
 const { combineReducers } = Redux;
 const todoApp = combineReducers({
-    todos,
-    visibilityFilter
+  todos,
+  visibilityFilter
 });
 
 const { createStore } = Redux;
